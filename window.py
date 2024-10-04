@@ -13,5 +13,5 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle('Calculadora básica')
         self.adjustSize()
-        self.resize(400, 500)
+        self.resize(400, 400)
         self.setFixedSize(self.width(), self.height())

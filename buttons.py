@@ -8,5 +8,4 @@ class Button(QPushButton):
         self.numeric_button()
 
     def numeric_button(self):
-        self.setStyleSheet('font-size: 30px')
-        self.setMinimumSize(75, 75)
+        self.setStyleSheet('font-size: 24px')
