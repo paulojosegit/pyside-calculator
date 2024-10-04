@@ -2,8 +2,8 @@
 from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QWidget
 
 class MainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
         self.cwidget = QWidget()
         self.vlayout = QVBoxLayout()
