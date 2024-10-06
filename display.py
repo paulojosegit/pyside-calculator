@@ -9,7 +9,7 @@ class Display(QLineEdit):
         self.configDisplay()
 
     def configDisplay(self):
-        self.setStyleSheet('font-size: 30px;')
+        self.setStyleSheet('font-size: 40px;')
         self.setMinimumHeight(80)
         self.setMinimumWidth(21)
         self.setAlignment(Qt.AlignmentFlag.AlignRight)
