@@ -15,4 +15,3 @@ class Display(QLineEdit):
         self.setAlignment(Qt.AlignmentFlag.AlignRight)
         self.setTextMargins(6,4,6,4)
         self.setPlaceholderText('0')
-        

@@ -1,6 +1,6 @@
 
 from PySide6.QtWidgets import QGridLayout
-from buttons import Button
+from button import Button
 
 class ButtonsGridLayout(QGridLayout):
     def __init__(self, *args, **kwagrs):
@@ -21,6 +21,3 @@ class ButtonsGridLayout(QGridLayout):
             for numberColumn, column in enumerate(row):
                 button = Button(column)
                 self.addWidget(button, numerRow, numberColumn)
-
-                
-

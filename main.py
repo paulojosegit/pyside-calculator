@@ -6,7 +6,6 @@ from PySide6.QtWidgets import QApplication
 
 from window import MainWindow
 from display import Display
-from buttons import Button
 from buttons_grid import ButtonsGridLayout
 
 app = QApplication(sys.argv)
