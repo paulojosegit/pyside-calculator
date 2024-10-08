@@ -20,6 +20,7 @@ class ButtonsGridLayout(QGridLayout):
         self.display = display
         self.makeGrid()
 
+    @Slot()
     def _makeConnectButtonDisplay(self, func, *args, **kwargs):
         def realSlot():
             func(*args, **kwargs)
@@ -29,7 +30,7 @@ class ButtonsGridLayout(QGridLayout):
         buttonText = button.text()
         return self.display.insert(buttonText)
 
-    def makeGrid(self):
+    def makeGrid(self): 
         for numerRow, row in enumerate(self._gridMask):
             for numberColumn, column in enumerate(row):
                 button = Button(column)
