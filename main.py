@@ -17,7 +17,7 @@ window = MainWindow()
 display = Display()
 window.vlayout.addWidget(display)
 
-buttonsGrid = ButtonsGridLayout()
+buttonsGrid = ButtonsGridLayout(display)
 window.vlayout.addLayout(buttonsGrid)
 
 window.show()
