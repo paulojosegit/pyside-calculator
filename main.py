@@ -1,6 +1,6 @@
 
 import sys
-import qdarktheme
+# import qdarktheme
 
 from PySide6.QtWidgets import QApplication
 
@@ -11,7 +11,7 @@ from buttons_grid import ButtonsGridLayout
 app = QApplication(sys.argv)
 
 # Dark Theme
-qdarktheme.setup_theme()
+# qdarktheme.setup_theme()
 
 window = MainWindow()
 display = Display()

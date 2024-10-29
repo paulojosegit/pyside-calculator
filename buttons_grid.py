@@ -3,6 +3,7 @@ from PySide6.QtWidgets import QGridLayout
 from button import Button
 from display import Display
 from PySide6.QtCore import Slot
+from utils import isValidNumber
 
 
 class ButtonsGridLayout(QGridLayout):
@@ -28,12 +29,20 @@ class ButtonsGridLayout(QGridLayout):
 
     def _insertKeyInDisplay(self, button: Button):
         buttonText = button.text()
-        return self.display.insert(buttonText)
+
+        if not isValidNumber(buttonText):
+            return
+        
+        self.display.insert(buttonText)
+        
+        if button == '=':
+            self.display.setText()
 
     def makeGrid(self): 
-        for numerRow, row in enumerate(self._gridMask):
+        for numberRow, row in enumerate(self._gridMask):
             for numberColumn, column in enumerate(row):
                 button = Button(column)
-                self.addWidget(button, numerRow, numberColumn)
+
+                self.addWidget(button, numberRow, numberColumn)
                 ButtonSlot = self._makeConnectButtonDisplay(self._insertKeyInDisplay, button)
                 button.clicked.connect(ButtonSlot)
