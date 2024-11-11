@@ -21,6 +21,6 @@ class Display(QLineEdit):
         self.setTextMargins(6,4,6,4)
         self.setPlaceholderText('0')
 
-        regex = QRegularExpression('^[0-9/*-+.^\◀]+$')
+        regex = QRegularExpression('^[0-9/*\-+\.**◀]+$')
         regexValidator = QRegularExpressionValidator(regex, self)
         self.setValidator(regexValidator)
