@@ -15,3 +15,4 @@ class MainWindow(QMainWindow):
         self.adjustSize()
         self.resize(400, 475)
         self.setFixedSize(self.width(), self.height())
+        
