@@ -10,3 +10,4 @@ class Button(QPushButton):
     def setStyleButton(self):
         self.setStyleSheet('font-size: 24px')
         self.setMinimumSize(75, 75)
+        

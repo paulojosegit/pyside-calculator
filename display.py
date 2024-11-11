@@ -24,3 +24,4 @@ class Display(QLineEdit):
         regex = QRegularExpression('^[0-9/*\-+\.**◀]+$')
         regexValidator = QRegularExpressionValidator(regex, self)
         self.setValidator(regexValidator)
+        
