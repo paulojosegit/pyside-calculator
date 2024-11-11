@@ -7,7 +7,7 @@ from PySide6.QtCore import Slot
 from PySide6.QtGui import QRegularExpressionValidator
 from PySide6.QtCore import QRegularExpression
 
-from utils import validDisplay
+from utils import validDisplay, validatorDisplay
 import re
 
 class ButtonsGridLayout(QGridLayout):
@@ -24,7 +24,7 @@ class ButtonsGridLayout(QGridLayout):
 
         self.display = display
         self.makeGrid()
-        self.display.setText('0')
+        # self.display.setText('0')
 
 
     @Slot()
@@ -36,13 +36,19 @@ class ButtonsGridLayout(QGridLayout):
     def _insertKeyInDisplay(self, button: Button):
         buttonText = button.text()
 
-        if button == 'C':
+        if buttonText == 'C':
             self.display.clear()
 
-        if not validDisplay(buttonText):
-            return
-        
         self.display.insert(buttonText)
+
+        sd = self.display.text()
+        
+        if buttonText == '=':
+            self.display.clear()
+            if buttonText[-1] == '=':
+                sdc = sd[:-1]
+                self.display.insert(str(eval(sdc)))
+                print(eval(sdc))
        
     def makeGrid(self): 
         for numberRow, row in enumerate(self._gridMask):
