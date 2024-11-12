@@ -7,6 +7,8 @@ from PySide6.QtWidgets import QLineEdit
 from PySide6.QtGui import QRegularExpressionValidator
 from PySide6.QtCore import QRegularExpression
 
+import re
+
 class Display(QLineEdit):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -24,4 +26,3 @@ class Display(QLineEdit):
         regex = QRegularExpression('^[0-9/*\-+\.**◀]+$')
         regexValidator = QRegularExpressionValidator(regex, self)
         self.setValidator(regexValidator)
-        

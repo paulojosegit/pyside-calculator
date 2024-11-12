@@ -20,6 +20,7 @@ class ButtonsGridLayout(QGridLayout):
 
         self.display = display
         self.makeGrid()
+        self.display.setText("0")
 
     @Slot()
     def _makeConnectButtonDisplay(self, func, *args, **kwargs):
@@ -30,12 +31,18 @@ class ButtonsGridLayout(QGridLayout):
     def _insertKeyInDisplay(self, button: Button):
         buttonText = button.text()
 
-        self.display.insert(buttonText)
+        if self.display.text() == '0':
+            self.display.clear()
 
+        if self.display.text() == '/':
+            self.display.clear()
+
+        self.display.insert(buttonText)
         displayString = self.display.text()
 
         if buttonText == 'C':
             self.display.clear()
+            self.display.insert('0')
         
         if buttonText == '=':
             self.display.clear()
